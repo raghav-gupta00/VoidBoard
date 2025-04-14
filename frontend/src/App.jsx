@@ -1,8 +1,9 @@
-import { UsernameModal } from "./components/UsernameModal.jsx"
+import { Login } from "./components/Login.jsx"
+
 
 function App() {
   return <>
-    <UsernameModal />
+    <Login />
   </>
 }
 

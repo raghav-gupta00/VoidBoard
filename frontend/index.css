@@ -16,7 +16,7 @@ button {
     background-color: #000;
     color: #fff;
     margin: 5px;
-    font-size: 1rem;    
+    font-size: 1rem;
 }
 
 button.clicked {
@@ -26,13 +26,24 @@ button.clicked {
 .input-bar {
     border: 1px solid #fff;
     background-color: #000;
-    color: #fff;
+    color: #00ff00;
     margin: 30px !important;
     padding: 10px;
     text-align: center;
 }
 
 .input-bar::placeholder {
-    text-align: center; 
-  }
+    text-align: center;
+}
 
+.description1 {
+    border: 1px solid white;
+    margin-bottom: 60px ;
+    padding: 10px;
+}
+
+.input-bar:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  
