@@ -38,12 +38,58 @@ button.clicked {
 
 .description1 {
     border: 1px solid white;
-    margin-bottom: 60px ;
+    margin-bottom: 60px;
     padding: 10px;
 }
 
 .input-bar:focus {
     outline: none;
     box-shadow: none;
-  }
-  
+}
+
+.chat-messages-box {
+    border: 1px solid white;
+}
+
+.chat-container {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.input-bar-container {
+    border: none;
+}
+
+.chat-container {
+    width: 90%;
+    max-width: 800px;
+    height: 90vh;
+    border: 1px solid white;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-messages-box {
+    flex-grow: 1;
+    overflow-y: auto;
+    border-top: 1px solid #555;
+    border-bottom: 1px solid #555;
+}
+
+.input-bar-container {
+    border: none;
+}
+
+button:active {
+    color: #00ff00 !important;
+}
+
+.chat-input-bar {
+    border: 1px solid #fff;
+    background-color: #000;
+    color: #00ff00;
+    margin: 30px !important;
+    padding: 10px;
+}
