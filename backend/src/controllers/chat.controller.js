@@ -1,24 +1,28 @@
 import { asyncHandler } from "../utils/asyncHandler.js";
-import fs from 'fs/promises'; // <-- fix here
-
+import { ChatObj } from "../models/chatObj.model.js";
+import {ApiResponse} from "../utils/ApiResponse.js"
 
 const saveMsg = asyncHandler(async (req, res) => {
-    //todo: write ChatObj.save functionality
+    
+    const {username, message} = req.body;
 
-    const data = req.body;
+    const newChat = await ChatObj.create({
+        username: username,
+        message: message
+    })
 
-    await fs.writeFile('data.json', JSON.stringify(data, null, 2)); // no 'utf-8' needed
-
-    res.status(200).json({
-        success: true,
-        message: 'JSON data saved successfully'
-    });
+    return res.status(201).json(
+        new ApiResponse(200,newChat, "Message saved successfully")
+    )
 });
 
 const sendChat = asyncHandler(async (req, res) => {
-    //todo: write functionality to get whole chat and send to frontend
 
-    res.send("Yeah Bitch! Yeah Science!");
+    const updatedChat = await ChatObj.find({}, "username message createdAt").sort({createdAt:1});
+
+    res.status(200).json(
+        new ApiResponse(200, updatedChat, "Chat fetched successfully")
+    )
 });
 
 export { saveMsg, sendChat };

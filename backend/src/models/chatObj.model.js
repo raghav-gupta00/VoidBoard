@@ -1,21 +1,23 @@
-import mongoose, { Schema } from "mongoose"
+import mongoose, { Schema } from "mongoose";
 
-const chatObj = new Schema({
+const chatObj = new Schema(
+  {
     username: {
-        type: String,
-        unique: true,
-        required: true,
-        lowercase: true,
-        trim: true,
-        index: true
+      type: String,
+      required: true,
+      trim: true,
+      index: true,
     },
     message: {
-        type: String
-    }
-},
-    { expireAfterSeconds: 60 },
-    {
-        timestamps: true
-    })
+      type: String,
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
+
+// Create an index for the expiration of msg
+chatObj.index({ createdAt: 1 }, { expireAfterSeconds: 60 });
 
 export const ChatObj = mongoose.model("ChatObj", chatObj);
