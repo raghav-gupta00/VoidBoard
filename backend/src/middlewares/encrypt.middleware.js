@@ -1,0 +1,1 @@
+//todo: encrypt messages before sending to db
