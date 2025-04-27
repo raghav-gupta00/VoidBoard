@@ -10,7 +10,7 @@ function Chat({ username, onLogout }) {
 
     const fetchChat = async () => {
         try {
-            const res = await fetch("http://localhost:8000/api/chat");
+            const res = await fetch("https://voidboard.onrender.com/api/chat");
             const val = await res.json();
 
             if (val.success) {
@@ -28,7 +28,7 @@ function Chat({ username, onLogout }) {
         const newMessage = { username, message };
 
         try {
-            const res = await fetch("http://localhost:8000/api/chat", {
+            const res = await fetch("https://voidboard.onrender.com/api/chat", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(newMessage)
