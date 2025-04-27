@@ -6,7 +6,6 @@ const chatObj = new Schema(
       type: String,
       required: true,
       trim: true,
-      index: true,
     },
     message: {
       type: String,
