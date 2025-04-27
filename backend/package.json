@@ -7,7 +7,8 @@
   "scripts": {
     "start": "node -r dotenv/config --experimental-json-modules src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon -r dotenv/config --experimental-json-modules src/index.js"
+    "dev": "nodemon -r dotenv/config --experimental-json-modules src/index.js",
+    "full-build": "cd ../frontend && npm install && npm run build && cp -r dist ../backend/dist && cd ../backend && npm install"
   },
   "keywords": [
     "node",
